@@ -3468,3 +3468,9 @@ body.debug #btn-teste-sino {
 /* Foto atual: interação sem modificar o tamanho ou a posição da moldura. */
 .paroco-foto-atual-interativa { cursor: pointer; }
 .paroco-foto-atual-interativa:focus-visible { outline: 3px solid var(--azul); outline-offset: 8px; border-radius: 16px; }
+
+/* Pároco atual na relação cronológica — mantém o mesmo retrato do cartão principal. */
+.cronologia-foto .retrato-atual-clicavel { padding: 0; cursor: pointer; border: 2px solid var(--dourado); }
+.cronologia-foto .retrato-atual-clicavel img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.cronologia-foto .retrato-atual-clicavel:hover { box-shadow: 0 0 0 3px rgb(212 175 55 / .2); }
+.cronologia-foto .retrato-atual-clicavel:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }

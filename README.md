@@ -141,3 +141,17 @@ Na seção **Acompanhe a Paróquia**, o destaque do Instagram agora usa uma larg
 
 ## Atualização: cartão Instagram nas cores do site
 O cartão compacto da seção **Acompanhe a Paróquia** agora usa azul, dourado e branco. A alteração está em `css/estilos.css`, nas classes `.redes-destaque`, `.redes-destaque-icon` e `.redes-btn`.
+
+
+## Pároco atual na lista cronológica
+
+A última linha da lista cronológica agora mostra a foto atual do Pe. Adeildo Sebastião Ferreira. Ao clicar na foto, abre a mesma comparação de imagens do cartão principal. A apresentação principal não foi alterada.
+
+
+## Foto do Pe. Adeildo na lista cronológica
+
+A linha do Pe. Adeildo na lista cronológica usa a imagem `assets/fotos/parocos/restaurada-Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp`. Ao clicar nela, o site abre a comparação entre a foto original e a foto restaurada por IA. O cartão principal continua exibindo a foto atual do site; ao clicar nela, a comparação utiliza a fotografia original e o arquivo restaurado `.webp`.
+
+
+### Comparação do Pe. Adeildo
+A ficha do Pe. Adeildo, aberta tanto pelo cartão principal quanto pela linha da lista, compara `Original - Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp` com `restaurada-Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp`. A miniatura da lista mostra a restaurada; o cartão principal mantém sua foto atual.

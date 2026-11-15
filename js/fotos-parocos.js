@@ -140,13 +140,13 @@ function configurarLegendasComparacao(esquerda, direita) {
 const fotoPadreAtual = document.getElementById('abrir-foto-paroco-atual');
 const FOTO_ADEILDO_ORIGINAL = 'Original - Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp';
 const FOTO_ADEILDO_ATUAL = 'assets/fotos/FotoPadreAdeildoSebastiaoFerreira.jpeg';
-const FOTO_ADEILDO_RESTAURADA_LISTA = 'assets/fotos/parocos/Adeildo-Restaurada-Lista.png';
+const FOTO_ADEILDO_RESTAURADA_LISTA = 'assets/fotos/parocos/restaurada-Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp';
 
 async function abrirFotoParocoAtual() {
-  configurarLegendasComparacao('Original', 'Foto atual');
+  configurarLegendasComparacao('Original', 'Restaurada por IA');
   document.getElementById('ficha-nome').textContent = 'Pe. Adeildo Sebastião Ferreira';
   document.getElementById('ficha-periodo').textContent = 'Pároco da Paróquia Nossa Senhora do Livramento';
-  document.getElementById('ficha-tipo').textContent = 'Comparação da fotografia original do acervo com a fotografia atual do site.';
+  document.getElementById('ficha-tipo').textContent = 'Comparação da fotografia original do acervo com a versão restaurada por IA.';
   document.getElementById('ficha-resumo').textContent = 'Responsável pela condução espiritual da comunidade, celebrações e atividades pastorais da paróquia.';
   fotoComparacao.hidden = true;
   fotoUnica.hidden = true;
@@ -154,28 +154,28 @@ async function abrirFotoParocoAtual() {
   dicaComparacao.hidden = true;
   const pedido = ++pedidoAtual;
   if (!dialogoSacerdote.open) dialogoSacerdote.showModal();
-  const [original, fotoAtual] = await Promise.all([
+  const [original, restaurada] = await Promise.all([
     verificarImagem(FOTO_ADEILDO_ORIGINAL),
     new Promise((resolve) => {
       const img = new Image();
-      img.onload = () => resolve(FOTO_ADEILDO_ATUAL);
+      img.onload = () => resolve(FOTO_ADEILDO_RESTAURADA_LISTA);
       img.onerror = () => resolve(null);
-      img.src = FOTO_ADEILDO_ATUAL;
+      img.src = FOTO_ADEILDO_RESTAURADA_LISTA;
     })
   ]);
   if (pedido !== pedidoAtual || !dialogoSacerdote.open) return;
-  if (original && fotoAtual) {
+  if (original && restaurada) {
     document.getElementById('ficha-original').src = original;
     document.getElementById('ficha-original').alt = 'Fotografia original de Pe. Adeildo Sebastião Ferreira';
-    imagemRestaurada.src = fotoAtual;
-    imagemRestaurada.alt = 'Fotografia atual de Pe. Adeildo Sebastião Ferreira, usada no site';
+    imagemRestaurada.src = restaurada;
+    imagemRestaurada.alt = 'Fotografia restaurada por IA de Pe. Adeildo Sebastião Ferreira';
     ajustarComparacao(50);
     fotoComparacao.hidden = false;
     semFoto.hidden = true;
     dicaComparacao.hidden = false;
-  } else if (original || fotoAtual) {
-    document.getElementById('ficha-foto-disponivel').src = original || fotoAtual;
-    document.getElementById('ficha-foto-etiqueta').textContent = original ? 'Original' : 'Foto atual';
+  } else if (original || restaurada) {
+    document.getElementById('ficha-foto-disponivel').src = original || restaurada;
+    document.getElementById('ficha-foto-etiqueta').textContent = original ? 'Original' : 'Restaurada por IA';
     fotoUnica.hidden = false;
     semFoto.hidden = true;
   }
@@ -223,6 +223,8 @@ const fotoAtualNaLista = document.getElementById('abrir-foto-paroco-atual-lista'
 if (fotoAtualNaLista) {
   fotoAtualNaLista.addEventListener('click', abrirFotoParocoAtualNaLista);
 }
+const nomeAtualNaLista = document.getElementById('abrir-nome-paroco-atual-lista');
+if (nomeAtualNaLista) nomeAtualNaLista.addEventListener('click', abrirFotoParocoAtualNaLista);
 fotoPadreAtual.addEventListener('click', abrirFotoParocoAtual);
 fotoPadreAtual.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' || event.key === ' ') {
