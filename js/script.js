@@ -452,3 +452,94 @@
             if (pre.parentNode) concluir();
         }, 6000);
     })();
+
+/* ===========================================================
+   RELÓGIO DA CAPA — HORÁRIO DE ARCOVERDE/PE
+   Usa o relógio do dispositivo convertido para America/Recife.
+   =========================================================== */
+(function iniciarRelogioParoquia() {
+    const horas = document.getElementById('ponteiro-horas');
+    const minutos = document.getElementById('ponteiro-minutos');
+    const segundos = document.getElementById('ponteiro-segundos');
+    const digital = document.getElementById('relogio-digital');
+    const data = document.getElementById('relogio-data');
+    const semana = document.getElementById('relogio-semana');
+    if (!horas || !minutos || !segundos || !digital || !data || !semana) return;
+
+    const formato = new Intl.DateTimeFormat('pt-BR', {
+        timeZone: 'America/Recife',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hourCycle: 'h23'
+    });
+    const formatoData = new Intl.DateTimeFormat('pt-BR', {
+        timeZone: 'America/Recife',
+        day: '2-digit', month: '2-digit', year: 'numeric', weekday: 'long'
+    });
+
+    function atualizarRelogio() {
+        const partes = Object.fromEntries(
+            formato.formatToParts(new Date())
+                .filter(parte => parte.type !== 'literal')
+                .map(parte => [parte.type, parte.value])
+        );
+        const h = Number(partes.hour);
+        const m = Number(partes.minute);
+        const s = Number(partes.second);
+        horas.style.transform = `translateX(-50%) rotate(${(h % 12) * 30 + m * 0.5 + s / 120}deg)`;
+        minutos.style.transform = `translateX(-50%) rotate(${m * 6 + s * 0.1}deg)`;
+        segundos.style.transform = `translateX(-50%) rotate(${s * 6}deg)`;
+        digital.textContent = `${partes.hour}:${partes.minute}:${partes.second}`;
+        digital.dateTime = digital.textContent;
+        const partesData = Object.fromEntries(
+            formatoData.formatToParts(new Date())
+                .filter(parte => parte.type !== 'literal')
+                .map(parte => [parte.type, parte.value])
+        );
+        data.textContent = `${partesData.day}/${partesData.month}/${partesData.year}`;
+        data.dateTime = `${partesData.year}-${partesData.month}-${partesData.day}`;
+        const diaSemana = partesData.weekday;
+        semana.textContent = diaSemana.charAt(0).toLocaleUpperCase('pt-BR') + diaSemana.slice(1);
+    }
+
+    atualizarRelogio();
+    setInterval(atualizarRelogio, 1000);
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) atualizarRelogio();
+    });
+})();
+
+/* ===========================================================
+   POSIÇÃO DO RELÓGIO: capa -> etiqueta lateral ao rolar.
+   Botões para ocultar e mostrar durante a rolagem.
+   =========================================================== */
+(function controlarEtiquetaRelogio() {
+    const relogio = document.getElementById('relogio-paroquia');
+    const inicio = document.querySelector('.parallax');
+    const topo = document.querySelector('.topo');
+    const ocultar = document.getElementById('relogio-ocultar');
+    const mostrar = document.getElementById('relogio-mostrar');
+    if (!relogio || !inicio || !ocultar || !mostrar) return;
+
+    let oculto = false;
+    let flutuante = false;
+    function atualizarPosicao() {
+        const barra = topo ? topo.getBoundingClientRect() : null;
+        // Na versão desktop a barra é fixa; no celular ela rola normalmente.
+        const limiteBarra = barra && barra.bottom > 0 && barra.top <= 0 ? barra.bottom : 0;
+        const ativar = inicio.getBoundingClientRect().bottom <= Math.max(0, limiteBarra) + 20;
+        if (ativar !== flutuante) {
+            flutuante = ativar;
+            relogio.classList.toggle('relogio-flutuante', flutuante);
+        }
+        relogio.style.setProperty('--relogio-topo-flutuante', `${Math.max(10, limiteBarra + 10)}px`);
+        relogio.classList.toggle('relogio-escondido', flutuante && oculto);
+        mostrar.hidden = !flutuante || !oculto;
+    }
+    ocultar.addEventListener('click', () => { oculto = true; atualizarPosicao(); });
+    mostrar.addEventListener('click', () => { oculto = false; atualizarPosicao(); });
+    window.addEventListener('scroll', atualizarPosicao, { passive: true });
+    window.addEventListener('resize', atualizarPosicao);
+    atualizarPosicao();
+})();

@@ -3474,3 +3474,146 @@ body.debug #btn-teste-sino {
 .cronologia-foto .retrato-atual-clicavel img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .cronologia-foto .retrato-atual-clicavel:hover { box-shadow: 0 0 0 3px rgb(212 175 55 / .2); }
 .cronologia-foto .retrato-atual-clicavel:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+
+
+/* ===========================================================
+   RELÓGIO DA CAPA / ETIQUETA — PERSONALIZE AQUI
+   Primeiro: centralizado sob "Sejam bem-vindos".
+   Ao rolar: discreto no canto esquerdo, com ocultar/mostrar.
+   =========================================================== */
+.relogio-paroquia {
+    --relogio-tamanho: 72px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 13px;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.65);
+    z-index: 2;
+}
+.relogio-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.relogio-analogico {
+    position: relative;
+    box-sizing: border-box;
+    width: var(--relogio-tamanho);
+    height: var(--relogio-tamanho);
+    border: 1px solid var(--dourado-claro);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+.relogio-marca {
+    position: absolute;
+    width: 1px;
+    height: 5px;
+    top: 4px;
+    left: calc(50% - .5px);
+    background: var(--dourado-claro);
+    border-radius: 2px;
+    transform-origin: .5px calc(var(--relogio-tamanho) / 2 - 4px);
+}
+.marca-3 { transform: rotate(90deg); }
+.marca-6 { transform: rotate(180deg); }
+.marca-9 { transform: rotate(270deg); }
+.relogio-ponteiro {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+    transform: translateX(-50%) rotate(0deg);
+}
+.ponteiro-horas { height: 29%; width: 2px; background: var(--dourado-claro); }
+.ponteiro-minutos { height: 39%; width: 1.5px; background: #fff; }
+.ponteiro-segundos { height: 43%; width: 1px; background: var(--azul); }
+.relogio-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dourado-claro);
+    border: 1px solid var(--azul-escuro);
+    transform: translate(-50%, -50%);
+}
+.relogio-digital {
+    display: block;
+    font-size: .77rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .11em;
+    color: var(--dourado-claro);
+    line-height: 1.4;
+}
+/* Data e dia da semana abaixo da hora digital. */
+.relogio-data,
+.relogio-semana {
+    display: block;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.15;
+}
+.relogio-data {
+    color: #fff;
+    font-size: .66rem;
+}
+.relogio-semana {
+    color: var(--dourado-claro);
+    font-size: .61rem;
+}
+.relogio-conteudo { gap: 3px; }
+.relogio-flutuante .relogio-data { font-size: .59rem; }
+.relogio-flutuante .relogio-semana { font-size: .56rem; }
+@media (max-width: 600px) {
+    .relogio-data { font-size: .61rem; }
+    .relogio-semana { font-size: .58rem; }
+    .relogio-flutuante .relogio-data { font-size: .56rem; }
+    .relogio-flutuante .relogio-semana { font-size: .53rem; }
+}
+.relogio-ocultar,
+.relogio-mostrar {
+    font-family: inherit;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid rgba(242,210,122,.7);
+    background: rgba(11,69,98,.93);
+    border-radius: 99px;
+}
+.relogio-ocultar { display: none; width: 24px; height: 24px; font-size: 19px; line-height: 18px; }
+.relogio-mostrar { padding: 9px 13px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.relogio-mostrar[hidden] { display: none !important; }
+.relogio-paroquia.relogio-flutuante {
+    --relogio-tamanho: 53px;
+    position: fixed;
+    top: var(--relogio-topo-flutuante, 12px);
+    left: max(10px, env(safe-area-inset-left));
+    margin: 0;
+    padding: 9px 10px 7px;
+    border: 1px solid rgba(212,175,55,.65);
+    border-radius: 13px;
+    background: rgba(7,55,82,.96);
+    box-shadow: 0 4px 18px rgba(0,0,0,.15);
+    z-index: 1100;
+    text-shadow: none;
+}
+.relogio-flutuante .relogio-ocultar { display: block; margin-top: 2px; }
+.relogio-flutuante .relogio-digital { font-size: .7rem; letter-spacing: .05em; }
+.relogio-flutuante.relogio-escondido { padding: 0; border: 0; background: transparent; box-shadow: none; }
+.relogio-flutuante.relogio-escondido .relogio-conteudo { display: none; }
+.relogio-flutuante.relogio-escondido .relogio-mostrar { display: inline-flex; align-items: center; gap: 5px; }
+.relogio-paroquia button:focus-visible { outline: 3px solid var(--dourado-claro); outline-offset: 3px; }
+@media (max-width: 600px) {
+    .relogio-paroquia { --relogio-tamanho: 60px; margin-top: 9px; }
+    .relogio-paroquia.relogio-flutuante { --relogio-tamanho: 46px; padding: 7px 8px; }
+    .relogio-digital { font-size: .7rem; }
+}

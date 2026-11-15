@@ -23,7 +23,7 @@ const DADOS_PAROCOS_ANTIGOS = {
   paroco_14: { original: "Original - Pe.-Adilson-Carlos-Simoes-Silva-1985-a-2007.webp", restaurada: "restaurada-Pe.-Adilson-Carlos-Simoes-Silva-1985-a-2007.webp", resumo: "" }, // Pe. Adilson Carlos Simões Silva
   paroco_15: { original: "Original - Pe.-Geraldo-Wagela-Ord.-28.12.1985.webp", restaurada: "restaurada-Pe.-Geraldo-Wagela-Ord.-28.12.1985.webp", resumo: "" }, // Pe. Geraldo Wagela
   paroco_16: { original: "Original - Mons.-Virgilio-Almeida-Ord.-30.05.1993.webp", restaurada: "restaurada-Mons.-Virgilio-Almeida-Ord.-30.05.1993.webp", resumo: "" }, // Mons. Virgilio Almeida
-  paroco_17: { original: "Original - Pe.-Jose-uiz-Ord.-03.02.1996.webp", restaurada: "restaurada-Pe.-Jose-uiz-Ord.-03.02.1996.webp", resumo: "" }, // Pe. José uiz
+  paroco_17: { original: "Original - Pe.-Jose-uiz-Ord.-03.02.1996.webp", restaurada: "restaurada-Pe.-Jose-uiz-Ord.-03.02.1996.webp", resumo: "" }, // Pe. José Luiz
   paroco_18: { original: "Original - Mons.-Nereudo-Freire-Ord.-13.12.1996.webp", restaurada: "restaurada-Mons.-Nereudo-Freire-Ord.-13.12.1996.webp", resumo: "" }, // Mons. Nereudo Freire
   paroco_19: { original: "Original - Pe.-Jose-Gomes-de-Melo-Ord.-29.10.1999.webp", restaurada: "restaurada-Pe.-Jose-Gomes-de-Melo-Ord.-29.10.1999.webp", resumo: "" }, // Pe. José Gomes de Melo
   paroco_20: { original: "Original - Pe.-Jose-Edson-Rodrigues-Ord.-25.11.2000.webp", restaurada: "restaurada-Pe.-Jose-Edson-Rodrigues-Ord.-25.11.2000.webp", resumo: "" }, // Pe. José Edson Rodrigues

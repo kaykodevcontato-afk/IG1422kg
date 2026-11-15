@@ -155,3 +155,28 @@ A linha do Pe. Adeildo na lista cronológica usa a imagem `assets/fotos/parocos/
 
 ### Comparação do Pe. Adeildo
 A ficha do Pe. Adeildo, aberta tanto pelo cartão principal quanto pela linha da lista, compara `Original - Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp` com `restaurada-Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp`. A miniatura da lista mostra a restaurada; o cartão principal mantém sua foto atual.
+
+
+## Relógio na página inicial
+
+Na seção **Boas-vindas**, há um relógio analógico transparente com a hora digital logo abaixo. O horário é exibido no fuso de **Arcoverde/PE (America/Recife)**, com base no relógio do aparelho do visitante. Para mudar tamanho e cores, procure `RELÓGIO NA CAPA` em `css/estilos.css`. O comportamento fica no fim de `js/script.js`.
+
+
+## Relógio discreto, no canto da capa
+O relógio agora aparece no canto superior direito **da imagem de boas-vindas**, abaixo do menu e fora da área central de textos. Não é fixo na tela: acompanha a capa ao rolar a página. Não há fundo fosco, preenchimento, blur ou sombra. O tamanho é de 64px no computador e 51px no celular, podendo ser ajustado em `css/estilos.css` na classe `.relogio-paroquia`.
+
+
+## Relógio na capa e etiqueta durante a rolagem
+
+Na página inicial, o relógio está **logo abaixo de “Sejam bem-vindos”**. Depois de rolar além da imagem inicial, aparece como uma pequena etiqueta no canto superior esquerdo, com botão **×** para ocultar e botão **Relógio** para reexibir. O horário continua sendo o de Arcoverde (America/Recife), calculado a partir do relógio do dispositivo.
+
+Edite `css/estilos.css` (bloco **RELÓGIO DA CAPA / ETIQUETA**) para ajustar tamanho ou cores; o movimento e botões ficam no final de `js/script.js`.
+
+
+## Data e dia da semana no relógio
+
+O relógio agora mostra **HH:MM:SS**, embaixo **DD/MM/AAAA** e, na linha seguinte, o **dia da semana**. Todos seguem o fuso `America/Recife`, também na etiqueta que aparece ao rolar. Os tamanhos ficam em `css/estilos.css` nas classes `.relogio-data` e `.relogio-semana`.
+
+
+## Relógio com traços finos
+A borda, os marcadores, os ponteiros e o centro do relógio foram afinados. Edite os estilos `.relogio-analogico`, `.relogio-marca`, `.ponteiro-horas`, `.ponteiro-minutos`, `.ponteiro-segundos` e `.relogio-centro` em `css/estilos.css`.

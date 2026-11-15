@@ -136,6 +136,29 @@
             <div class="overlay">
                 <h2>Paróquia Nossa Senhora do Livramento</h2>
                 <p class="subtitulo-parallax">Sejam bem-vindos</p>
+
+                <!-- RELÓGIO: centralizado aqui; vira etiqueta ao rolar a página -->
+                <div class="relogio-paroquia" id="relogio-paroquia" aria-label="Horário de Arcoverde, Pernambuco">
+                    <div class="relogio-conteudo" id="relogio-conteudo">
+                        <div class="relogio-analogico" aria-hidden="true">
+                            <span class="relogio-marca marca-12"></span>
+                            <span class="relogio-marca marca-3"></span>
+                            <span class="relogio-marca marca-6"></span>
+                            <span class="relogio-marca marca-9"></span>
+                            <span class="relogio-ponteiro ponteiro-horas" id="ponteiro-horas"></span>
+                            <span class="relogio-ponteiro ponteiro-minutos" id="ponteiro-minutos"></span>
+                            <span class="relogio-ponteiro ponteiro-segundos" id="ponteiro-segundos"></span>
+                            <span class="relogio-centro"></span>
+                        </div>
+                        <time class="relogio-digital" id="relogio-digital">--:--:--</time>
+                        <time class="relogio-data" id="relogio-data">--/--/----</time>
+                        <span class="relogio-semana" id="relogio-semana">---</span>
+                        <button type="button" class="relogio-ocultar" id="relogio-ocultar" aria-label="Ocultar relógio" title="Ocultar relógio">×</button>
+                    </div>
+                    <button type="button" class="relogio-mostrar" id="relogio-mostrar" aria-label="Mostrar relógio" title="Mostrar relógio" hidden>
+                        <span aria-hidden="true">◷</span> Relógio
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -478,7 +501,7 @@
                                             <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_14" aria-label="Retrato de Pe. Adilson Carlos Simões Silva ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1985</td><td>Pe. Adilson Carlos Simões Silva</td><td>1985 a 2007</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
                                             <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_15" aria-label="Retrato de Pe. Geraldo Wagela ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1985</td><td>Pe. Geraldo Wagela</td><td>Ord. 28.12.1985</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
                                             <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_16" aria-label="Retrato de Mons. Virgilio Almeida ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1993</td><td>Mons. Virgilio Almeida</td><td>Ord. 30.05.1993</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
-                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_17" aria-label="Retrato de Pe. José uiz ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1996</td><td>Pe. José uiz</td><td>Ord. 03.02.1996</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_17" aria-label="Retrato de Pe. José Luiz ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1996</td><td>Pe. José Luiz</td><td>Ord. 03.02.1996</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
                                             <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_18" aria-label="Retrato de Mons. Nereudo Freire ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1996</td><td>Mons. Nereudo Freire</td><td>Ord. 13.12.1996</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
                                             <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_19" aria-label="Retrato de Pe. José Gomes de Melo ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1999</td><td>Pe. José Gomes de Melo</td><td>Ord. 29.10.1999</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
                                             <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_20" aria-label="Retrato de Pe. José Edson Rodrigues ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2000</td><td>Pe. José Edson Rodrigues</td><td>Ord. 25.11.2000</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
@@ -530,7 +553,7 @@
                     <div>
                         <span class="redes-perfil"><i class="fab fa-instagram" aria-hidden="true"></i> @paroquiadolivramento</span>
                         <h3>Nossas fotos e novidades estão no Instagram</h3>
-                        <p>Acompanhe também a Paróquia Nossa Senhora do Livramento pelas redes sociais! Confira fotos, vídeos, momentos especiais e publicações da nossa comunidade. As redes sociais complementam nosso site oficial, aproximando ainda mais a paróquia dos fiéis.</p>
+                        <p>Acompanhe as publicações diretamente no perfil da paróquia. Assim, você sempre vê as fotos realmente publicadas, sem uma galeria desatualizada no site.</p>
                         <a class="redes-btn" href="https://www.instagram.com/paroquiadolivramento/" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-instagram" aria-hidden="true"></i> Ver fotos e publicações <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
