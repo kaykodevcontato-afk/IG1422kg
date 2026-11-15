@@ -1268,18 +1268,24 @@ body {
 .paroco-foto-coluna {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
 }
 
 .paroco-foto-wrap {
     position: relative;
-    display: inline-block;
+    display: block;
     width: min(100%, 210px);
+    margin-inline: auto;
 }
 
 .paroco-foto-wrap img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    object-position: 50% 50%;
+    box-sizing: border-box;
     display: block;
     border-radius: 50%;
     border: 4px solid var(--dourado-claro);
@@ -1472,6 +1478,10 @@ body {
 
     .paroco-conteudo {
         text-align: center;
+    }
+
+    .paroco-foto-coluna {
+        justify-self: center;
     }
 
     .parocos-resumo {
@@ -3358,3 +3368,84 @@ body.debug #btn-teste-sino {
 
 /* Oculta o preloader após o carregamento */
 .preloader { display: none !important; }
+
+
+/* LISTA CRONOLÓGICA DOS SACERDOTES — seção Nosso Pároco */
+.parocos-historico-conteudo { text-align: left; }
+.cronologia-titulo { margin: 2px 0 12px; color: var(--azul-escuro); font-size: 1.15rem; }
+.cronologia-tabela-scroll { overflow-x: auto; max-width: 100%; border: 1px solid #e5ebef; border-radius: 12px; }
+.cronologia-tabela { width: 100%; border-collapse: collapse; min-width: 570px; font-size: .94rem; }
+.cronologia-tabela th { background: var(--azul-escuro); color: #fff; padding: 13px 15px; text-align: left; }
+.cronologia-tabela td { padding: 12px 15px; border-bottom: 1px solid #e9edf0; vertical-align: middle; }
+.cronologia-tabela tbody tr:nth-child(even) { background: #f1faff; }
+.cronologia-tabela tbody tr:hover { background: #e5f5fd; }
+.cronologia-ano { color: var(--azul-escuro); font-weight: 800; font-variant-numeric: tabular-nums; }
+.cronologia-tipo { font-size: .76rem; background: #fdf6df; color: #745411; padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.cronologia-nota { font-size: .84rem; line-height: 1.6; color: var(--texto-fraco); margin: 14px 0 0; }
+@media (max-width: 760px) {
+    .parocos-resumo { align-items: center; text-align: left; }
+    .cronologia-tabela { font-size: .87rem; }
+}
+
+
+/* =============================================================
+   LISTA HISTÓRICA EM LARGURA TOTAL — não altera o pároco atual
+   ============================================================= */
+.padre-container > .parocos-historico { margin-top: 24px; }
+.padre-container > .parocos-historico .parocos-historico-conteudo {
+    background: #fff; padding: 24px; border: 1px solid #e9edf0;
+    border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.04);
+}
+.padre-container > .parocos-historico .cronologia-tabela { min-width: 690px; }
+.cronologia-foto { width: 90px; text-align: center; }
+.cronologia-foto .retrato-paroco {
+    display: inline-flex; width: 64px; height: 70px;
+    align-items: center; justify-content: center; flex-direction: column; gap: 4px;
+    background: #f2f5f7; border: 1px dashed #cbd6de;
+    border-radius: 10px; color: #70818e; overflow: hidden;
+}
+.retrato-paroco i { font-size: 23px; }
+.retrato-paroco span { font-size: 10px; white-space: nowrap; }
+.retrato-paroco img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.retrato-atual-indicador { display:inline-block; font-size: 11px; font-weight: 700; color: var(--azul-escuro); }
+@media (max-width: 760px) {
+  .padre-container > .parocos-historico .parocos-historico-conteudo { padding: 14px 10px; }
+  .padre-container > .parocos-historico .cronologia-tabela { min-width: 630px; }
+  .cronologia-foto { width: 70px; }
+  .cronologia-foto .retrato-paroco { width: 52px; height: 58px; }
+}
+
+
+/* FICHAS INTERATIVAS DOS SACERDOTES ANTIGOS */
+.cronologia-foto .retrato-paroco { cursor: pointer; }
+.cronologia-foto .retrato-paroco:focus-visible, .cronologia-abrir:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+.cronologia-abrir { cursor: pointer; padding: 3px 2px; border: 0; background: transparent; text-align: left; color: var(--azul-escuro); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-color: transparent; }
+.cronologia-abrir:hover { text-decoration-color: currentColor; }
+.ficha-sacerdote { width: min(940px,calc(100% - 28px)); max-height: min(92dvh,900px); padding: 22px; border: 1px solid #e8dfc3; border-radius: 20px; box-shadow: 0 20px 70px #0004; box-sizing: border-box; color: var(--texto); }
+.ficha-sacerdote::backdrop { background: rgb(5 19 29 / .72); backdrop-filter: blur(3px); }
+.ficha-topo { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 22px; }
+.ficha-fechar { border:0; background:#eef7fb; border-radius:50%; width:42px; height:42px; cursor:pointer; font-size:28px; line-height:1; color:#23536b; }
+.ficha-corpo { display:grid; grid-template-columns: minmax(220px, 360px) 1fr; gap:28px; align-items:start; }
+.ficha-fotografia { min-width:0; }
+.ficha-comparacao, .ficha-foto-unica, .ficha-sem-foto { position:relative; overflow:hidden; width:100%; aspect-ratio: 3 / 4; border:2px solid var(--dourado); border-radius:16px; background:#f3f6f8; box-sizing:border-box; }
+.ficha-comparacao > img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+#ficha-original { z-index:1; }
+#ficha-restaurada { z-index:2; clip-path:inset(0 50% 0 0); }
+.ficha-legenda { position:absolute; bottom:12px; z-index:4; padding:5px 8px; border-radius:5px; font-size:11px; font-weight:700; color:white; background:#16485cbb; pointer-events:none; }
+.ficha-legenda-esq { left:10px; }.ficha-legenda-dir { right:10px; }
+.ficha-linha { position:absolute; top:0; bottom:0; left:50%; width:3px; z-index:3; background:white; box-shadow:0 0 6px #0007; pointer-events:none; }
+#ficha-deslizar { position:absolute; inset:0; z-index:5; width:100%; height:100%; margin:0; cursor:ew-resize; opacity:0; touch-action:pan-y; }
+.ficha-foto-unica img { width:100%; height:100%; object-fit:contain; }
+.ficha-foto-unica span { position:absolute; bottom:12px; left:12px; padding:5px 9px; background:#16485c; border-radius:5px; color:white; font-size:12px; }
+.ficha-sem-foto { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; color:#687a86; padding:18px; }
+.ficha-sem-foto i { font-size:64px; }
+.ficha-dica { font-size:12px; color:var(--texto-suave); text-align:center; }
+.ficha-informacoes { text-align:left; }
+.ficha-informacoes h3 { margin:8px 0 16px; color:var(--azul-escuro); font-size:clamp(1.35rem,3vw,1.9rem); }
+.ficha-informacoes h4 { margin:25px 0 10px; color:var(--azul-escuro); }
+.ficha-informacoes p { line-height:1.65; }
+.ficha-periodo { font-size:1.1rem; font-weight:700; color:var(--dourado-escuro); }
+.ficha-tipo { font-size:.85rem; color:var(--texto-fraco); }
+@media(max-width:650px) { .ficha-sacerdote { padding:14px; } .ficha-corpo { grid-template-columns:1fr; gap:12px; } .ficha-fotografia { max-width:300px; width:100%; margin-inline:auto; } }
+
+.ficha-sacerdote [hidden] { display: none !important; }

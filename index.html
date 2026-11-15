@@ -427,7 +427,7 @@
             <h2 class="titulo" id="paroco">Nosso Pároco</h2>
             <span class="linha-azul" aria-hidden="true"></span>
             <div class="padre-container">
-                <p class="parocos-intro">Conheça o pároco atual e, ao clicar, reveja em cards os sacerdotes que também marcaram a história da paróquia. Cada card usa a mesma moldura dourada da seção da Padroeira.</p>
+                <p class="parocos-intro">Conheça o pároco atual e consulte a relação histórica de sacerdotes, organizada do mais antigo ao mais recente.</p>
 
                 <article class="paroco-principal">
                     <div class="paroco-principal-grid">
@@ -444,44 +444,56 @@
                             <p class="paroco-cargo"><strong>Pároco</strong> da Paróquia Nossa Senhora do Livramento</p>
                             <p class="paroco-descricao-principal">Responsável pela condução espiritual da comunidade, celebrações e atividades pastorais da paróquia.</p>
 
-                            <details class="parocos-historico">
-                                <summary class="parocos-resumo">
-                                    <span><i class="fas fa-users" aria-hidden="true"></i> Clique para ver os outros párocos</span>
-                                    <span class="parocos-seta" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
-                                </summary>
 
-                                <div class="parocos-historico-conteudo">
-                                    <p class="parocos-historico-texto">Os cards abaixo já ficam prontos para cadastro. Basta trocar a foto no catálogo do topo do arquivo e editar nome, período e descrição de cada pároco.</p>
-
-                                    <!-- MODELO: duplique um article.paroco-card para adicionar mais párocos antigos. -->
-                                    <div class="parocos-lista">
-                                        <article class="paroco-card">
-                                            <div class="paroco-foto-wrap">
-                                                <img data-foto="paroco_exemplo_1" alt="Nome do pároco anterior" width="150" height="150" loading="lazy">
-                                                <div class="moldura-dourada" aria-hidden="true"></div>
-                                            </div>
-                                            <span class="paroco-status">Pároco anterior</span>
-                                            <h4>Nome do pároco anterior</h4>
-                                            <p class="paroco-periodo">Ex.: 2018 a 2024</p>
-                                            <p>Escreva aqui uma breve lembrança, contribuição ou período de atuação deste pároco na comunidade.</p>
-                                        </article>
-
-                                        <article class="paroco-card">
-                                            <div class="paroco-foto-wrap">
-                                                <img data-foto="paroco_exemplo_2" alt="Nome do outro pároco anterior" width="150" height="150" loading="lazy">
-                                                <div class="moldura-dourada" aria-hidden="true"></div>
-                                            </div>
-                                            <span class="paroco-status">Pároco anterior</span>
-                                            <h4>Nome do outro pároco</h4>
-                                            <p class="paroco-periodo">Ex.: 2010 a 2018</p>
-                                            <p>Adicione aqui outra descrição curta sobre o trabalho pastoral, o período e algum destaque da sua missão.</p>
-                                        </article>
-                                    </div>
-                                </div>
-                            </details>
                         </div>
                     </div>
                 </article>
+
+                <!-- LISTA HISTÓRICA: independente do cartão do pároco atual. -->
+                            <!-- HISTÓRICO DOS SACERDOTES: área independente abaixo da apresentação do pároco atual. -->
+                            <details class="parocos-historico">
+                                <summary class="parocos-resumo">
+                                    <span><i class="fas fa-clock" aria-hidden="true"></i> Ver fotos e lista dos sacerdotes — ordem cronológica</span>
+                                    <span class="parocos-seta" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="parocos-historico-conteudo">
+                                    <h4 class="cronologia-titulo">Ordem cronológica — do mais antigo ao mais recente</h4>
+                                    <div class="cronologia-tabela-scroll" role="region" aria-label="Lista cronológica dos sacerdotes" tabindex="0">
+                                        <table class="cronologia-tabela">
+                                            <thead><tr><th scope="col">Foto</th><th scope="col">Ano</th><th scope="col">Nome</th><th scope="col">Período ou ordenação</th><th scope="col">Tipo</th></tr></thead>
+                                            <tbody>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_01" aria-label="Retrato de Mons. José Kherle ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1919</td><td>Mons. José Kherle</td><td>Primeiro Vigário</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_02" aria-label="Retrato de Pe. Joaquim Taumaturgo Albuquerque ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1920</td><td>Pe. Joaquim Taumaturgo Albuquerque</td><td>1920 a 1922</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_03" aria-label="Retrato de Pe. Joaquim Martins Pontes ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1922</td><td>Pe. Joaquim Martins Pontes</td><td>1922 a 1924</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_04" aria-label="Retrato de Pe. João Rodrigues ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1925</td><td>Pe. João Rodrigues</td><td>1925 a 1927</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_05" aria-label="Retrato de Mons. Urbano Carvalho ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1933</td><td>Mons. Urbano Carvalho</td><td>1933 a 1934</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_06" aria-label="Retrato de Pe. Luiz Wanderley Simões ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1940</td><td>Pe. Luiz Wanderley Simões</td><td>1940 a 1946</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_07" aria-label="Retrato de Pe. Olimpio Torres ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1947</td><td>Pe. Olimpio Torres</td><td>1947 a 1948</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_08" aria-label="Retrato de Pe. Pedro Gabriel de Vasconcelos ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1948</td><td>Pe. Pedro Gabriel de Vasconcelos</td><td>1948 a 1954</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_09" aria-label="Retrato de Pe. Raimundo Bergmans ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1959</td><td>Pe. Raimundo Bergmans</td><td>1959 a 1961</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_10" aria-label="Retrato de Pe. João Pedro (Peters) ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1961</td><td>Pe. João Pedro (Peters)</td><td>1961 a 1964</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_11" aria-label="Retrato de Mons. Fausto Serafim de Souza Ferraz ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1964</td><td>Mons. Fausto Serafim de Souza Ferraz</td><td>1964 a 1965</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_12" aria-label="Retrato de Pe. Antônio Inocêncio de Lima ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1968</td><td>Pe. Antônio Inocêncio de Lima</td><td>1968 a 1984</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_13" aria-label="Retrato de Pe. Airton Freire de Lima ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1984</td><td>Pe. Airton Freire de Lima</td><td>1984</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_14" aria-label="Retrato de Pe. Adilson Carlos Simões Silva ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1985</td><td>Pe. Adilson Carlos Simões Silva</td><td>1985 a 2007</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_15" aria-label="Retrato de Pe. Geraldo Wagela ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1985</td><td>Pe. Geraldo Wagela</td><td>Ord. 28.12.1985</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_16" aria-label="Retrato de Mons. Virgilio Almeida ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1993</td><td>Mons. Virgilio Almeida</td><td>Ord. 30.05.1993</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_17" aria-label="Retrato de Pe. José uiz ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1996</td><td>Pe. José uiz</td><td>Ord. 03.02.1996</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_18" aria-label="Retrato de Mons. Nereudo Freire ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1996</td><td>Mons. Nereudo Freire</td><td>Ord. 13.12.1996</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_19" aria-label="Retrato de Pe. José Gomes de Melo ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">1999</td><td>Pe. José Gomes de Melo</td><td>Ord. 29.10.1999</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_20" aria-label="Retrato de Pe. José Edson Rodrigues ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2000</td><td>Pe. José Edson Rodrigues</td><td>Ord. 25.11.2000</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_21" aria-label="Retrato de Pe. Allan Sobral ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2006</td><td>Pe. Allan Sobral</td><td>Ord. 24.05.2006</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_22" aria-label="Retrato de Pe. Samuel Rogério ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2006</td><td>Pe. Samuel Rogério</td><td>Ord. 24.05.2006</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_23" aria-label="Retrato de Pe. José Waldeilson ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2007</td><td>Pe. José Waldeilson</td><td>Ord. 02.02.2007</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_24" aria-label="Retrato de Pe. João Paulo ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2007</td><td>Pe. João Paulo</td><td>Ord. 20.04.2007</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_25" aria-label="Retrato de Pe. Fábio José ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2007</td><td>Pe. Fábio José</td><td>Ord. 28.07.2007</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-paroco" data-retrato="paroco_26" aria-label="Retrato de Pe. Fábio Amaro ainda não fornecido"><i class="fas fa-user" aria-hidden="true"></i><span>Sem foto</span></span></td><td class="cronologia-ano">2007</td><td>Pe. Fábio Amaro</td><td>Ord. 04.11.2007</td><td><span class="cronologia-tipo">Ordenação</span></td></tr>
+                                            <tr><td class="cronologia-foto"><span class="retrato-atual-indicador">Pároco atual</span></td><td class="cronologia-ano">2007</td><td>Pe. Adeildo Sebastião Ferreira</td><td>2007 até a atualidade</td><td><span class="cronologia-tipo">Atuação</span></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </details>
             </div>
         </section>
 
@@ -809,5 +821,36 @@
     </div>
     <!-- FUNCIONALIDADES: scripts separados. As fotos são carregadas do catálogo acima. -->
     <script src="js/script.js" defer></script>
+
+    <!-- FICHA DOS SACERDOTES ANTIGOS — independente do cartão do pároco atual -->
+    <dialog id="ficha-sacerdote" class="ficha-sacerdote" aria-labelledby="ficha-nome">
+      <div class="ficha-topo">
+        <span class="paroco-badge">✦ Memória da Paróquia ✦</span>
+        <button type="button" id="ficha-fechar" class="ficha-fechar" aria-label="Fechar ficha">×</button>
+      </div>
+      <div class="ficha-corpo">
+        <div class="ficha-fotografia">
+          <div id="ficha-comparacao" class="ficha-comparacao" hidden>
+            <img id="ficha-original" alt="Fotografia original do sacerdote">
+            <img id="ficha-restaurada" alt="Fotografia restaurada digitalmente por IA">
+            <span class="ficha-legenda ficha-legenda-esq">Original</span>
+            <span class="ficha-legenda ficha-legenda-dir">Restaurada por IA</span>
+            <div id="ficha-linha" class="ficha-linha" aria-hidden="true"></div>
+            <input type="range" id="ficha-deslizar" min="0" max="100" value="50" aria-label="Deslize para comparar foto original e restaurada por inteligência artificial">
+          </div>
+          <div id="ficha-foto-unica" class="ficha-foto-unica" hidden><img id="ficha-foto-disponivel" alt="Fotografia do sacerdote"><span id="ficha-foto-etiqueta"></span></div>
+          <div id="ficha-sem-foto" class="ficha-sem-foto"><i class="fas fa-user" aria-hidden="true"></i><span>Fotografia ainda não cadastrada</span></div>
+          <p id="ficha-dica" class="ficha-dica" hidden>Deslize a barra ou arraste o dedo sobre a imagem para comparar.</p>
+        </div>
+        <div class="ficha-informacoes">
+          <h3 id="ficha-nome"></h3>
+          <p class="ficha-periodo" id="ficha-periodo"></p>
+          <p class="ficha-tipo" id="ficha-tipo"></p>
+          <h4>Breve histórico</h4>
+          <p id="ficha-resumo"></p>
+        </div>
+      </div>
+    </dialog>
+    <script src="js/fotos-parocos.js" defer></script>
 </body>
 </html>

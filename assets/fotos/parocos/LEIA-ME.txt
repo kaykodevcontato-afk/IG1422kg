@@ -1,0 +1,1 @@
+Coloque aqui as fotos REAIS dos sacerdotes antigos. Depois edite js/fotos-parocos.js com o nome de cada arquivo. Nao coloque a foto do padre atual nesta pasta.
