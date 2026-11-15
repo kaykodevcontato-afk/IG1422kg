@@ -110,3 +110,34 @@ As frases de orientação sobre validação do acervo foram retiradas da parte p
 ## Ajuste do retrato do pároco atual
 
 A foto foi centralizada na moldura em `css/estilos.css`, nas classes `.paroco-foto-coluna`, `.paroco-foto-wrap` e `.paroco-foto-wrap img`. Para ajustar o enquadramento do rosto, altere `object-position: 50% 50%` somente nessa última classe.
+
+
+## Fotos históricas dos párocos antigos
+
+As fotos originais e as versões restauradas por IA já foram adicionadas em `assets/fotos/parocos/` e vinculadas no arquivo `js/fotos-parocos.js`.
+A foto do pároco atual foi mantida separada, sem alteração.
+
+
+## Comparação dos párocos antigos — atualização
+
+- Na lista histórica, o retrato mostrado é a **foto restaurada por IA** (quando disponível).
+- Ao clicar no retrato ou no nome, abre-se a ficha com as duas fotos e o deslizador.
+- **Original** aparece à esquerda e **Restaurada por IA** à direita.
+- Quando você desliza até mostrar uma única versão, a legenda da outra desaparece.
+- As informações e a imagem do pároco atual não foram modificadas.
+- Para trocar fotos, edite `js/fotos-parocos.js` e `assets/fotos/parocos/`.
+
+
+## Comparar as fotos do pároco atual
+
+Clique na imagem do Pe. Adeildo Sebastião Ferreira, no cartão principal da seção “Nosso Pároco”. A ficha compara a fotografia original enviada no RAR (`assets/fotos/parocos/Original - Pe.-Adeildo-Sebastiao-Ferreira-2007-ate-a-atualidade.webp`) com a foto atual que já aparece no site (`assets/fotos/FotoPadreAdeildoSebastiaoFerreira.jpeg`). Use o controle deslizante no mouse ou no celular. O retrato do cartão, nome e demais informações não foram alterados.
+
+Para substituir futuramente a foto atual, mantenha o nome do arquivo ou atualize o caminho `FOTO_ADEILDO_ATUAL` em `js/fotos-parocos.js`.
+
+
+## Cartão do Instagram compacto
+Na seção **Acompanhe a Paróquia**, o destaque do Instagram agora usa uma largura máxima de 760px, centralizada. Para ajustar, edite `.redes-destaque` em `css/estilos.css`.
+
+
+## Atualização: cartão Instagram nas cores do site
+O cartão compacto da seção **Acompanhe a Paróquia** agora usa azul, dourado e branco. A alteração está em `css/estilos.css`, nas classes `.redes-destaque`, `.redes-destaque-icon` e `.redes-btn`.
