@@ -30,7 +30,7 @@ html {
 
 @font-face {
     font-family: "Peristiwa";
-    src: url("../Peristiwa.otf") format("opentype");
+    src: url("../assets/fontes/Peristiwa.otf") format("opentype");
     font-display: swap;
 }
 
@@ -1225,40 +1225,260 @@ body {
 }
 
 .padre-container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 40px auto 80px;
     padding: 0 20px;
 }
 
-.padre-card {
+.parocos-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: -10px auto 28px;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.paroco-principal {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.paroco-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+.paroco-principal-grid {
+    display: grid;
+    grid-template-columns: minmax(190px, 240px) 1fr;
+    gap: 34px;
+    align-items: center;
+}
+
+.paroco-foto-coluna {
+    display: flex;
+    justify-content: center;
+}
+
+.paroco-foto-wrap {
+    position: relative;
+    display: inline-block;
+    width: min(100%, 210px);
+}
+
+.paroco-foto-wrap img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid var(--dourado-claro);
+    background: white;
+    box-shadow: 0 15px 35px rgba(11, 143, 192, 0.18);
+    position: relative;
+    z-index: 2;
+}
+
+.paroco-conteudo {
+    text-align: left;
+}
+
+.paroco-badge {
+    display: inline-block;
+    background: var(--fundo-claro);
+    color: var(--azul-escuro);
+    border: 1px solid var(--azul);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.paroco-conteudo h3 {
+    color: var(--azul-escuro);
+    margin: 0 0 10px;
+    font-size: 1.65rem;
+}
+
+.paroco-cargo {
+    margin: 0 0 10px;
+    color: var(--dourado-escuro);
+    font-weight: 700;
+}
+
+.paroco-descricao-principal {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.parocos-historico {
+    margin-top: 22px;
+}
+
+.parocos-historico > summary {
+    list-style: none;
+}
+
+.parocos-historico > summary::-webkit-details-marker {
+    display: none;
+}
+
+.parocos-resumo {
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 14px;
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-radius: 16px;
+    padding: 15px 18px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    transition: 0.25s;
+}
+
+.parocos-resumo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.14);
+    border-color: var(--dourado);
+}
+
+.parocos-resumo i:first-child {
+    color: var(--dourado-escuro);
+    margin-right: 8px;
+}
+
+.parocos-seta {
+    color: var(--azul);
+    transition: transform 0.25s ease;
+}
+
+.parocos-historico[open] .parocos-seta {
+    transform: rotate(180deg);
+}
+
+.parocos-historico-conteudo {
+    padding-top: 18px;
+}
+
+.parocos-historico-texto {
+    margin: 0 0 18px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.parocos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.paroco-card {
     background: white;
     border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    flex-wrap: wrap;
+    padding: 22px 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.padre-card img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--dourado);
+.paroco-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
 }
 
-.padre-info {
-    flex: 1;
-    text-align: left;
-    min-width: 250px;
+.paroco-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(14,175,234,0.12);
 }
 
-.padre-info h3 {
-    color: var(--azul-escuro);
+.paroco-card .paroco-foto-wrap {
+    width: min(100%, 150px);
+    margin: 0 auto 18px;
+}
+
+.paroco-card .moldura-dourada {
+    inset: -12px;
+}
+
+.paroco-status {
+    display: inline-block;
     margin-bottom: 10px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    color: var(--dourado-escuro);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
 }
+
+.paroco-card h4 {
+    margin: 0 0 8px;
+    color: var(--azul-escuro);
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.paroco-periodo {
+    margin: 0 0 10px;
+    color: var(--dourado-escuro);
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.paroco-card p:last-child {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+    .paroco-principal {
+        padding: 24px 20px;
+    }
+
+    .paroco-principal-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        text-align: center;
+    }
+
+    .paroco-conteudo {
+        text-align: center;
+    }
+
+    .parocos-resumo {
+        align-items: flex-start;
+    }
+}
+
 
 .grupos-container {
     max-width: 1100px;
@@ -3135,3 +3355,6 @@ body.debug #btn-teste-sino {
     }
 
 }
+
+/* Oculta o preloader após o carregamento */
+.preloader { display: none !important; }
