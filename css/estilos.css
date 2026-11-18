@@ -3503,7 +3503,7 @@ body.debug #btn-teste-sino {
     box-sizing: border-box;
     width: var(--relogio-tamanho);
     height: var(--relogio-tamanho);
-    border: 1px solid var(--dourado-claro);
+    border: 1.5px solid var(--dourado-claro);
     border-radius: 50%;
     background: transparent;
     box-shadow: none;
@@ -3511,13 +3511,13 @@ body.debug #btn-teste-sino {
 }
 .relogio-marca {
     position: absolute;
-    width: 1px;
-    height: 5px;
+    width: 2px;
+    height: 6px;
     top: 4px;
-    left: calc(50% - .5px);
+    left: calc(50% - 1px);
     background: var(--dourado-claro);
     border-radius: 2px;
-    transform-origin: .5px calc(var(--relogio-tamanho) / 2 - 4px);
+    transform-origin: 1px calc(var(--relogio-tamanho) / 2 - 4px);
 }
 .marca-3 { transform: rotate(90deg); }
 .marca-6 { transform: rotate(180deg); }
@@ -3530,18 +3530,18 @@ body.debug #btn-teste-sino {
     transform-origin: 50% 100%;
     transform: translateX(-50%) rotate(0deg);
 }
-.ponteiro-horas { height: 29%; width: 2px; background: var(--dourado-claro); }
-.ponteiro-minutos { height: 39%; width: 1.5px; background: #fff; }
-.ponteiro-segundos { height: 43%; width: 1px; background: var(--azul); }
+.ponteiro-horas { height: 29%; width: 4px; background: var(--dourado-claro); }
+.ponteiro-minutos { height: 39%; width: 2.5px; background: #fff; }
+.ponteiro-segundos { height: 43%; width: 1.5px; background: var(--azul); }
 .relogio-centro {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--dourado-claro);
-    border: 1px solid var(--azul-escuro);
+    border: 1.5px solid var(--azul-escuro);
     transform: translate(-50%, -50%);
 }
 .relogio-digital {

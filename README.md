@@ -176,7 +176,3 @@ Edite `css/estilos.css` (bloco **RELÓGIO DA CAPA / ETIQUETA**) para ajustar tam
 ## Data e dia da semana no relógio
 
 O relógio agora mostra **HH:MM:SS**, embaixo **DD/MM/AAAA** e, na linha seguinte, o **dia da semana**. Todos seguem o fuso `America/Recife`, também na etiqueta que aparece ao rolar. Os tamanhos ficam em `css/estilos.css` nas classes `.relogio-data` e `.relogio-semana`.
-
-
-## Relógio com traços finos
-A borda, os marcadores, os ponteiros e o centro do relógio foram afinados. Edite os estilos `.relogio-analogico`, `.relogio-marca`, `.ponteiro-horas`, `.ponteiro-minutos`, `.ponteiro-segundos` e `.relogio-centro` em `css/estilos.css`.
